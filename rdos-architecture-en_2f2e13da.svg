@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 764" font-family="Inter, 'Noto Sans SC', sans-serif">
+<rect width="960" height="764" fill="#ffffff"/>
+<rect x="24" y="24" width="912" height="64" rx="8" fill="#eef1f6"/>
+<text x="480.0" y="64.0" text-anchor="middle" font-size="26" font-weight="700" fill="#1f3864">RDOS · Four-Layer Data Governance Framework</text>
+<rect x="24" y="108" width="912" height="150" rx="8" fill="#f8f9fb" stroke="#e3e7ee" stroke-width="1"/>
+<rect x="24" y="108" width="128" height="44" rx="6" fill="#1f3864"/>
+<text x="88.0" y="137" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">Layer 4</text>
+<text x="170" y="138" font-size="22" font-weight="700" fill="#1f3864">Smart Contract</text>
+<circle cx="44" cy="177" r="2.5" fill="#b08d57"/>
+<text x="56" y="182" font-size="15.5" fill="#3c4655">KPI-triggered automated yield distribution</text>
+<circle cx="44" cy="203" r="2.5" fill="#b08d57"/>
+<text x="56" y="208" font-size="15.5" fill="#3c4655">Covenants as Code: terms encoded in smart contracts</text>
+<circle cx="44" cy="229" r="2.5" fill="#b08d57"/>
+<text x="56" y="234" font-size="15.5" fill="#3c4655">On-chain compliance: whitelist, lock-up, transfer limits</text>
+<rect x="24" y="272" width="912" height="150" rx="8" fill="#f8f9fb" stroke="#e3e7ee" stroke-width="1"/>
+<rect x="24" y="272" width="128" height="44" rx="6" fill="#1f3864"/>
+<text x="88.0" y="301" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">Layer 3</text>
+<text x="170" y="302" font-size="22" font-weight="700" fill="#1f3864">Oracle &amp; Attestation</text>
+<circle cx="44" cy="341" r="2.5" fill="#b08d57"/>
+<text x="56" y="346" font-size="15.5" fill="#3c4655">Chainlink signing + RD multi-source cross-validation nodes</text>
+<circle cx="44" cy="367" r="2.5" fill="#b08d57"/>
+<text x="56" y="372" font-size="15.5" fill="#3c4655">Hash-on-chain, data-off-chain architecture</text>
+<circle cx="44" cy="393" r="2.5" fill="#b08d57"/>
+<text x="56" y="398" font-size="15.5" fill="#3c4655">Third-party audit attestation: custodian / accountant / engineer</text>
+<rect x="24" y="436" width="912" height="150" rx="8" fill="#f8f9fb" stroke="#e3e7ee" stroke-width="1"/>
+<rect x="24" y="436" width="128" height="44" rx="6" fill="#1f3864"/>
+<text x="88.0" y="465" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">Layer 2</text>
+<text x="170" y="466" font-size="22" font-weight="700" fill="#1f3864">Data &amp; Edge</text>
+<circle cx="44" cy="505" r="2.5" fill="#b08d57"/>
+<text x="56" y="510" font-size="15.5" fill="#3c4655">Multi-source: SCADA / revenue / bank reconciliation / filings</text>
+<circle cx="44" cy="531" r="2.5" fill="#b08d57"/>
+<text x="56" y="536" font-size="15.5" fill="#3c4655">Edge computing cleansing + AI-driven anomaly detection</text>
+<circle cx="44" cy="557" r="2.5" fill="#b08d57"/>
+<text x="56" y="562" font-size="15.5" fill="#3c4655">Fault tolerance: no single source failure blocks on-chain relay</text>
+<rect x="24" y="600" width="912" height="150" rx="8" fill="#f8f9fb" stroke="#e3e7ee" stroke-width="1"/>
+<rect x="24" y="600" width="128" height="44" rx="6" fill="#1f3864"/>
+<text x="88.0" y="629" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">Layer 1</text>
+<text x="170" y="630" font-size="22" font-weight="700" fill="#1f3864">IoT &amp; Sensing</text>
+<circle cx="44" cy="669" r="2.5" fill="#b08d57"/>
+<text x="56" y="674" font-size="15.5" fill="#3c4655">Electricity / water / flow meters / environmental sensors</text>
+<circle cx="44" cy="695" r="2.5" fill="#b08d57"/>
+<text x="56" y="700" font-size="15.5" fill="#3c4655">Real-time KPI capture: generation / rent / tolls / output</text>
+<circle cx="44" cy="721" r="2.5" fill="#b08d57"/>
+<text x="56" y="726" font-size="15.5" fill="#3c4655">Device-side signing: one device, one certificate</text>
+</svg>

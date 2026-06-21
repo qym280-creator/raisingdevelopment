@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 764" font-family="Inter, 'Noto Sans SC', sans-serif">
+<rect width="960" height="764" fill="#ffffff"/>
+<rect x="24" y="24" width="912" height="64" rx="8" fill="#eef1f6"/>
+<text x="480.0" y="64.0" text-anchor="middle" font-size="26" font-weight="700" fill="#1f3864">RDOS · 四层数据治理框架</text>
+<rect x="24" y="108" width="912" height="150" rx="8" fill="#f8f9fb" stroke="#e3e7ee" stroke-width="1"/>
+<rect x="24" y="108" width="128" height="44" rx="6" fill="#1f3864"/>
+<text x="88.0" y="137" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">合约层</text>
+<text x="170" y="138" font-size="22" font-weight="700" fill="#1f3864">Smart Contract</text>
+<circle cx="44" cy="177" r="2.5" fill="#b08d57"/>
+<text x="56" y="182" font-size="15.5" fill="#3c4655">KPI 触发的自动化收益分配</text>
+<circle cx="44" cy="203" r="2.5" fill="#b08d57"/>
+<text x="56" y="208" font-size="15.5" fill="#3c4655">条款即代码（Covenants as Code）</text>
+<circle cx="44" cy="229" r="2.5" fill="#b08d57"/>
+<text x="56" y="234" font-size="15.5" fill="#3c4655">链上合规规则：白名单、锁仓、转让限制</text>
+<rect x="24" y="272" width="912" height="150" rx="8" fill="#f8f9fb" stroke="#e3e7ee" stroke-width="1"/>
+<rect x="24" y="272" width="128" height="44" rx="6" fill="#1f3864"/>
+<text x="88.0" y="301" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">协议层</text>
+<text x="170" y="302" font-size="22" font-weight="700" fill="#1f3864">Oracle &amp; Attestation</text>
+<circle cx="44" cy="341" r="2.5" fill="#b08d57"/>
+<text x="56" y="346" font-size="15.5" fill="#3c4655">Chainlink 签名 + 润信多源交叉验证节点</text>
+<circle cx="44" cy="367" r="2.5" fill="#b08d57"/>
+<text x="56" y="372" font-size="15.5" fill="#3c4655">数据摘要上链（hash-on-chain, data-off-chain）</text>
+<circle cx="44" cy="393" r="2.5" fill="#b08d57"/>
+<text x="56" y="398" font-size="15.5" fill="#3c4655">第三方审计签章（托管行 / 会计师 / 工程师）</text>
+<rect x="24" y="436" width="912" height="150" rx="8" fill="#f8f9fb" stroke="#e3e7ee" stroke-width="1"/>
+<rect x="24" y="436" width="128" height="44" rx="6" fill="#1f3864"/>
+<text x="88.0" y="465" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">数据层</text>
+<text x="170" y="466" font-size="22" font-weight="700" fill="#1f3864">Data &amp; Edge</text>
+<circle cx="44" cy="505" r="2.5" fill="#b08d57"/>
+<text x="56" y="510" font-size="15.5" fill="#3c4655">多源采集：SCADA / 营收系统 / 银行对账 / 监管报送</text>
+<circle cx="44" cy="531" r="2.5" fill="#b08d57"/>
+<text x="56" y="536" font-size="15.5" fill="#3c4655">边缘计算清洗 + 异常检测（AI 驱动）</text>
+<circle cx="44" cy="557" r="2.5" fill="#b08d57"/>
+<text x="56" y="562" font-size="15.5" fill="#3c4655">容错机制：任一数据源故障不阻断链上回传</text>
+<rect x="24" y="600" width="912" height="150" rx="8" fill="#f8f9fb" stroke="#e3e7ee" stroke-width="1"/>
+<rect x="24" y="600" width="128" height="44" rx="6" fill="#1f3864"/>
+<text x="88.0" y="629" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">物理层</text>
+<text x="170" y="630" font-size="22" font-weight="700" fill="#1f3864">IoT &amp; Sensing</text>
+<circle cx="44" cy="669" r="2.5" fill="#b08d57"/>
+<text x="56" y="674" font-size="15.5" fill="#3c4655">电表 / 水表 / 流量计 / 环境传感器</text>
+<circle cx="44" cy="695" r="2.5" fill="#b08d57"/>
+<text x="56" y="700" font-size="15.5" fill="#3c4655">运营 KPI 实时采集（发电量 / 租金 / 收费 / 产出）</text>
+<circle cx="44" cy="721" r="2.5" fill="#b08d57"/>
+<text x="56" y="726" font-size="15.5" fill="#3c4655">设备侧签名：一机一证书（Device Identity）</text>
+</svg>
