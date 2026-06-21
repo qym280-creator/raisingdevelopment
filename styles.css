@@ -193,7 +193,7 @@ html[data-locale="zh-Hant"] .hero .sub,html[data-locale="zh-Hans"] .hero .sub{fo
 .stat{padding:clamp(30px,4vw,56px) clamp(20px,3vw,44px);position:relative}
 .stat + .stat::before{content:"";position:absolute;left:0;top:18%;bottom:18%;width:1px;background:var(--line)}
 .section--navy .stat + .stat::before{background:var(--line-light)}
-.stat .num{font-family:var(--serif);font-weight:700;font-size:clamp(40px,5.5vw,72px);color:var(--royal);line-height:1;letter-spacing:-.02em}
+.stat .num{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.5vw,72px);color:var(--royal);line-height:1;letter-spacing:-.02em}
 .section--navy .stat .num{color:#fff}
 .stat .label{margin-top:18px;font-size:14.5px;color:var(--muted);line-height:1.4}
 .section--navy .stat .label{color:var(--muted-light)}

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page Not Found · Raising Development</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;500&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="/assets/css/styles.css">
 <style>
 .nf{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:var(--navy);color:#fff;padding:40px}
 .nf .code{font-family:var(--serif);font-size:clamp(80px,16vw,180px);font-weight:300;color:var(--gold);line-height:1}
@@ -21,145 +21,8 @@
   <div class="code">404</div>
   <h1><span data-lang="en">Page Not Found</span><span data-lang="zh-Hant">頁面不存在</span><span data-lang="zh-Hans">页面不存在</span></h1>
   <p><span data-lang="en">The page you are looking for could not be found.</span><span data-lang="zh-Hant">您所尋找的頁面不存在或已移動。</span><span data-lang="zh-Hans">您所寻找的页面不存在或已移动。</span></p>
-  <a class="btn btn--solid" href="index.html"><span data-lang="en">Return Home</span><span data-lang="zh-Hant">返回首頁</span><span data-lang="zh-Hans">返回首页</span></a>
+  <a class="btn btn--solid" href="/"><span data-lang="en">Return Home</span><span data-lang="zh-Hant">返回首頁</span><span data-lang="zh-Hans">返回首页</span></a>
 </div>
-<script>
-/* =========================================================================
-   Raising Development — site behaviour
-   - trilingual switch (EN / 繁 / 简) with persistence
-   - sticky header state, mobile drawer
-   - scroll reveal, active nav
-   - contact form (Web3Forms / mailto fallback)
-   ========================================================================= */
-(function () {
-  "use strict";
-
-  var LOCALES = ["en", "zh-Hant", "zh-Hans"];
-  var LANG_HTML = { "en": "en", "zh-Hant": "zh-Hant", "zh-Hans": "zh-Hans" };
-  var STORE_KEY = "rd-locale";
-
-  /* ---- locale ---------------------------------------------------------- */
-  function getStored() {
-    try { return localStorage.getItem(STORE_KEY); } catch (e) { return null; }
-  }
-  function store(loc) {
-    try { localStorage.setItem(STORE_KEY, loc); } catch (e) {}
-  }
-  function detectDefault() {
-    var stored = getStored();
-    if (stored && LOCALES.indexOf(stored) > -1) return stored;
-    var n = (navigator.language || "en").toLowerCase();
-    if (n.indexOf("zh") === 0) {
-      if (n.indexOf("hant") > -1 || n.indexOf("tw") > -1 || n.indexOf("hk") > -1 || n.indexOf("mo") > -1) return "zh-Hant";
-      return "zh-Hans";
-    }
-    return "en";
-  }
-  function applyLocale(loc) {
-    if (LOCALES.indexOf(loc) < 0) loc = "en";
-    document.documentElement.setAttribute("data-locale", loc);
-    document.documentElement.setAttribute("lang", LANG_HTML[loc]);
-    store(loc);
-    document.querySelectorAll(".lang button[data-set-locale]").forEach(function (b) {
-      b.classList.toggle("active", b.getAttribute("data-set-locale") === loc);
-    });
-    var wp = (loc === "en") ? "whitepaper-en.pdf" : "whitepaper-cn.pdf";
-    document.querySelectorAll("a[data-whitepaper]").forEach(function (a) { a.setAttribute("href", wp); });
-  }
-
-  applyLocale(detectDefault()); // run early to avoid flash
-
-  /* ---- DOM ready ------------------------------------------------------- */
-  function ready(fn) {
-    if (document.readyState !== "loading") fn();
-    else document.addEventListener("DOMContentLoaded", fn);
-  }
-
-  ready(function () {
-    applyLocale(document.documentElement.getAttribute("data-locale") || "en");
-
-    /* language buttons */
-    document.querySelectorAll(".lang button[data-set-locale]").forEach(function (b) {
-      b.addEventListener("click", function () {
-        applyLocale(b.getAttribute("data-set-locale"));
-        closeDrawer();
-      });
-    });
-
-    /* sticky header */
-    var header = document.querySelector(".site-header");
-    var onScroll = function () {
-      if (!header) return;
-      if (window.scrollY > 40) header.classList.add("scrolled");
-      else header.classList.remove("scrolled");
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    /* mobile drawer */
-    var burger = document.querySelector(".burger");
-    var drawer = document.querySelector(".drawer");
-    if (burger && drawer) {
-      burger.addEventListener("click", function () { drawer.classList.add("open"); document.body.style.overflow = "hidden"; });
-      drawer.querySelectorAll("a, .drawer-close").forEach(function (el) {
-        el.addEventListener("click", closeDrawer);
-      });
-    }
-    function _close() { if (drawer) drawer.classList.remove("open"); document.body.style.overflow = ""; }
-    window.closeDrawer = _close;
-
-    /* scroll reveal */
-    var reveals = document.querySelectorAll(".reveal");
-    if ("IntersectionObserver" in window && reveals.length) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
-        });
-      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
-      reveals.forEach(function (r) { io.observe(r); });
-    } else {
-      reveals.forEach(function (r) { r.classList.add("in"); });
-    }
-
-    /* contact form */
-    var form = document.querySelector("form[data-contact]");
-    if (form) initForm(form);
-  });
-
-  function closeDrawer() { if (window.closeDrawer) window.closeDrawer(); }
-
-  /* ---- contact form ---------------------------------------------------- */
-  function initForm(form) {
-    var status = form.querySelector(".form-status");
-    var endpoint = form.getAttribute("data-endpoint") || "";
-    form.addEventListener("submit", function (e) {
-      // If no real endpoint configured, fall back to a mailto draft.
-      if (!endpoint || endpoint.indexOf("YOUR_") === 0) {
-        e.preventDefault();
-        var fd = new FormData(form);
-        var lines = [];
-        fd.forEach(function (v, k) { if (v) lines.push(k + ": " + v); });
-        var subject = encodeURIComponent("[Website enquiry] " + (fd.get("name") || ""));
-        var body = encodeURIComponent(lines.join("\n"));
-        window.location.href = "mailto:contact@raisingdevelopment.com?subject=" + subject + "&body=" + body;
-        return;
-      }
-      // Otherwise submit via fetch to the configured endpoint (e.g. Web3Forms).
-      e.preventDefault();
-      var data = new FormData(form);
-      setStatus("", "");
-      var btn = form.querySelector("[type=submit]");
-      if (btn) btn.disabled = true;
-      fetch(endpoint, { method: "POST", body: data, headers: { Accept: "application/json" } })
-        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
-        .then(function (res) {
-          if (res.ok) { form.reset(); setStatus("ok", form.getAttribute("data-ok") || "Thank you — your message has been sent."); }
-          else { setStatus("err", form.getAttribute("data-err") || "Something went wrong. Please email us directly."); }
-        })
-        .catch(function () { setStatus("err", form.getAttribute("data-err") || "Something went wrong. Please email us directly."); })
-        .finally(function () { if (btn) btn.disabled = false; });
-    });
-   
-</script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>
